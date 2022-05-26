@@ -3,7 +3,7 @@ from .image_urls import bucket_image_urls
 
 
 def get_landing_page(shared_state):
-    st.header("Local News")
+    st.header("Local News Social Media Dataset")
     st.markdown(
         """
         ### Introduction
@@ -15,8 +15,6 @@ def get_landing_page(shared_state):
         The FIPS county code makes it easy to retrieve data at the county-level, including census data or voter records. 
         We constructed this dataset through expanding a seed directory of local news outlets with Facebook’s “Related Pages” feature. 
         Based on our validation, we expect this dataset to cover approximately 60% of local news outlets in the U.S. 
-        
-        The full methodology for how this dataset was constructed and validated, and a use case for analysis around COVID-19, is detailed in our paper “Understanding Social Local Coverage and Engagement at Scale During the COVID-19 Pandemic,” forthcoming at ICWSM.
 
         We additionally expanded this dataset with two implicitly-constructed metrics. 
         The first, population reach, is a measure of how local or national an outlet is. 
@@ -27,8 +25,11 @@ def get_landing_page(shared_state):
         This dataset can be used to analyze content of local news outlets in the U.S. at large scales. 
         We encourage researchers to make use of Twitter and Facebook APIs to retrieve local news social media content.
 
-        ### Contact Us
+        ### Methodology
+        The full methodology for how this dataset was constructed and validated, and a use case for analysis around COVID-19, is detailed in our original paper [Understanding Local News Social Coverage and Engagement at Scale during the COVID-19 Pandemic](https://mariannealq.com/wp-content/uploads/2022/05/Local_News_ICWSM_Camera_Ready.pdf).
 
+        ### Contact Us
+        If there's anything you'd like to discuss, if there are any issues with the dataset, or if you have any questions, please contact Marianne Aubin Le Quere ([@marianneaubin](https://twitter.com/marianneaubin)) on Twitter. We're also always looking for additional collaborators on projects -- feel free to reach out!
         
         *Marianne Aubin Le Quéré ([@marianneaubin](https://twitter.com/marianneaubin)), Ting-Wei Chiang ([@chiangtingwei](https://twitter.com/chiangtingwei)), Mor Naaman ([@informor](https://twitter.com/informor)).*
 

@@ -3,7 +3,7 @@ import pandas as pd
 # import networkx as nx
 import matplotlib.pyplot as plt
 
-N = 20
+N = 100
 OUTLET_DATASET_URL = "https://raw.githubusercontent.com/sTechLab/local-news-dataset/main/local_news_outlets_dataset.csv"
 OUTLET_DATASET_FILEPATH = './data/local_news_outlets_dataset.csv'
 STATE_NAMES = [ 'AK', 'AL', 'AR', 'AZ', 'CA', 'CO', 'CT', 'DC', 'DE', 'FL', 'GA',
@@ -36,7 +36,7 @@ def get_content_dataframe(selected_state, selected_ranking):
     for col in ['TwitterId', 'FacebookId'] + extra_columns:
         df[col] = df[col].apply(lambda x: str(int(round(x))) if pd.notnull(x) else x)
     df = df.fillna('')
-    return df.head(N)[selected_columns + extra_columns]
+    return df.head(N)[selected_columns]
 
 # def get_network_graph():
 #     G = nx.karate_club_graph()
@@ -49,9 +49,7 @@ def get_explore_data_page(shared_state):
     st.header("Explore The Dataset")
 
     st.markdown("""
-### This is the dataset
-what is this dataset
-
+Only top 100 rows are shown.
 """)
     
     col1, col2 = st.columns(2)
@@ -75,7 +73,7 @@ what is this dataset
     st.table(get_content_dataframe(selected_state, selected_ranking))
 
     st.markdown("""
-### Field Description
+#### Field Description
 | Field      | Description                                                                                                                                                                      |
 |------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | OutletId   | Unique local news outlet ID of this dataset (from 0 to 10256)                                                                                                                    |
@@ -86,7 +84,7 @@ what is this dataset
 | TwitterId  | Unique identifier of Twitter account                                                                                                                                             |
 | FacebookId | Unique identifier of Facebook account, also known as platformId on CrowdTangle                                                                                                   |
 """)
- 
+
     # st.pyplot(get_network_graph())
 
 

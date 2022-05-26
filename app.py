@@ -121,7 +121,7 @@ selection = st.sidebar.radio("Go to", PAGE_OPTIONS, index=get_selected_page_inde
 
 st.sidebar.markdown(
     """
-    - [The Paper (arXiv)]()
+    - [The Paper (arXiv)](https://mariannealq.com/wp-content/uploads/2022/05/Local_News_ICWSM_Camera_Ready.pdf)
     - [Download The Full Dataset (Github)](https://github.com/sTechLab/local-news-dataset)  
 """
 )
